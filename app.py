@@ -3,7 +3,8 @@ import gym
 import numpy as np
 import pickle
 import matplotlib.pyplot as plt
-
+if not hasattr(np, 'bool8'):
+    np.bool8 = np.bool_
 # App title
 st.set_page_config(layout="centered")
 st.title("🃏 Blackjack Q-Learning Agent (Trained)")
