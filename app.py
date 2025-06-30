@@ -3,9 +3,6 @@ import gym
 import numpy as np
 import pickle
 import matplotlib.pyplot as plt
-from IPython.display import clear_output  # Optional for local
-from PIL import Image
-import io
 
 # App title
 st.set_page_config(layout="centered")
@@ -30,23 +27,15 @@ if st.button("▶️ Play 1 Episode"):
     frames = []
     done = False
 
-    # Run one episode using trained Q
     while not done:
-        # Choose best action from Q-table
         action = np.argmax([Q.get((state, a), 0.0) for a in [0, 1]])
-
-        # Take action
         next_state, reward, terminated, truncated, _ = env.step(action)
         done = terminated or truncated
         total_reward += reward
-
-        # Render current frame
-        img_array = env.render()
-        frames.append(img_array)
-
+        frames.append(env.render())
         state = next_state
 
-    # Display results
+    # Show result
     st.subheader(f"🏁 Episode finished! Reward: **{total_reward}**")
     if total_reward > 0:
         st.success("You won! 🎉")
@@ -55,6 +44,7 @@ if st.button("▶️ Play 1 Episode"):
     else:
         st.info("It's a draw.")
 
+    # Show frames
     st.subheader("🎞️ Gameplay Frames")
     for frame in frames:
         fig, ax = plt.subplots()
