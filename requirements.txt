@@ -1,5 +1,5 @@
-streamlit==1.32.2
+streamlit
 gym==0.26.2
-matplotlib==3.7.1
-pillow==9.5.0
-numpy==1.23.5
+matplotlib
+pillow
+numpy>=1.24
