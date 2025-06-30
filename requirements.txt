@@ -1,5 +1,6 @@
 streamlit
-gym[toy_text]==0.26.2
+gym==0.26.2
+pygame==2.5.2
 matplotlib
 pillow
 numpy>=1.24
