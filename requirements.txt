@@ -2,4 +2,4 @@ streamlit
 gym==0.26.2
 matplotlib
 pillow
-numpy
+numpy==1.23.5
