@@ -11,7 +11,7 @@ st.title("🃏 Blackjack Q-Learning Agent (Trained)")
 # Load the trained Q-table
 @st.cache_data
 def load_q_table():
-    with open("q_table.pkl", "rb") as f:
+    with open("q_table (1).pkl", "rb") as f:
         Q = pickle.load(f)
     return Q
 
